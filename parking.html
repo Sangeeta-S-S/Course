@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="top">
+        <div class="container mt-4">
+            <label id="VechileNo">Vehicle Number </label>
+            <input type="text" name="vechNo" id="vechNo" />
+            <button class="btn btn-primary" onclick="entry()">Entry</button>
+            <div id="fill"></div>
+        </div><br>
+        <div>
+            <div class="container mt-4">
+
+                <select name="Vechile" id="Vechile">
+                    <option>--Select--</option>
+                    <!-- <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option> -->
+                </select>
+
+
+
+                <button class="btn btn-primary" onclick="search()">Search</button>
+                <button class="btn btn-primary" onclick="clearAll()">Clear</button>
+                <button class="btn btn-primary" onclick="exit()">Exit</button>
+
+                <!-- <button class="btn btn-primary" onclick="clear()">CLear</button> -->
+            </div>
+        </div><br>
+        <!-- <div></div> -->
+        <div class="container mt-4">
+            <table class="table">
+                <tr>
+                    <!-- <input type="text" id="1"/ -->
+                    <!-- <div class="park1"> -->
+                    <td id="1">
+                        null
+                    </td>
+                    <!-- </div> -->
+                    <!-- <div class="park1"> -->
+                    <td id="2">
+                        null
+                    </td>
+                    <!-- </div> -->
+
+                    <td id="3">
+                        null3
+                    </td>
+                    <td id="4">
+                        null4
+                    </td>
+                    <td id="5">
+                        null5
+                    </td>
+                </tr>
+
+                <tr>
+                    <td id="10">10</td>
+                    <!-- <select name="" id="">
+                        <option value="" id="tn23">tn23</option>
+                        
+                        <option value="" id="tn90">tn90</option>
+                        <option value="" id=""></option>
+                        <option value="" id=""></option>
+                    </select> -->
+                    <td id="9">9</td>
+                    <td id="8">8</td>
+                    <td id="7">7</td>
+                    <td id="6">6</td>
+                </tr>
+
+
+            </table>
+
+        </div>
+        <div>
+
+            <!-- <select name="Vechile" id="Vechile">
+                <option>--Select--</option>
+                <option name="op1"></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+            </select> -->
+
+        </div>
+    </div>
+    <style>
+        .top {
+            margin-top: 50px;
+        }
+
+        .drop {
+            margin-left: 100px
+        }
+
+        .table {
+            background-color: rgb(41, 189, 41);
+        }
+    </style>
+    <script>
+        var vechileNumber = ["null", "null", "null", "null", "null", "null", "null", "null", "null", "null"];
+        var addVechile = ""
+        var dropdownElement = "";
+        function entry() {
+            let VechileId = document.getElementById('vechNo').value;
+            let searchNumber = document.getElementById('Vechile').value;
+
+            for (let idx = 0; idx <= vechileNumber.length; idx++) {
+                // color();
+                if (idx == 10) {
+                    document.getElementById('fill').innerHTML = "Parking Bay is fill";
+                    break;
+                }
+                else if(VechileId==""){
+                    document.getElementById('fill').innerHTML = "Please enter the valid number";
+                    break;
+                }
+                else if(vechileNumber[idx]==VechileId){
+                    document.getElementById('fill').innerHTML = "Vechicle Number is already exist";
+                    break;
+                    
+                }
+                else if (vechileNumber[idx] == "null") {
+                    
+                    vechileNumber[idx] = VechileId;
+                    console.log(vechileNumber[idx]);
+
+                    //creating dropdown element
+                    let Dropdrown = document.getElementById("Vechile");
+                    let optionelement = document.createElement("option");
+                    optionelement.text = VechileId;
+                    optionelement.id = VechileId;
+                    Dropdrown.add(optionelement);
+                    // optionelem.textContent = VechileId;
+                    // optionelem.id = VechileId
+                    // document.getElementById("Vechile").appendChild(optionelem)
+                    // Dropdrown.add(optionelem);
+                    //update number in tables
+                    document.getElementById(idx + 1 + "").innerHTML = VechileId;
+                    document.getElementById(idx + 1 + "").style.backgroundColor = "grey";
+                    resetVechileNum();
+                    divfill();
+
+                    break;
+                }
+                
+
+            }
+            console.log(vechileNumber);
+
+
+        }
+        function resetVechileNum() {
+            document.getElementById('vechNo').value = "";
+
+        }
+        function resetdropdown() {
+            document.getElementById('Vechile').value = "--Select--";
+
+        }
+        function exit() {
+            let searchNumber = document.getElementById('Vechile').value;
+            for (let idx = 0; idx < vechileNumber.length; idx++) {
+                if (searchNumber == vechileNumber[idx]) {
+                    //update the values in arreay
+                    let remveh = vechileNumber[idx]
+                    vechileNumber[idx] = "null";
+                    //remove values from dropdown
+                    let remelem = document.getElementById(remveh + "");
+                    console.log(remelem);
+                    remelem.remove()
+                    document.getElementById(idx + 1 + "").innerHTML = "null";
+                    document.getElementById(idx + 1 + "").style.backgroundColor = "rgb(41, 189, 41)";
+                    resetdropdown();
+
+                    break;
+                }
+
+
+            }
+
+
+            console.log(vechileNumber)
+        }
+
+        function search() {
+            let searchNumber = document.getElementById('Vechile').value;
+
+            // console.log(searchNumber);
+            for (let idx = 0; idx < vechileNumber.length; idx++) {
+                if (searchNumber == vechileNumber[idx]) {
+                    document.getElementById(idx + 1 + "").innerHTML = idx + 1 + "<br>" + searchNumber;
+                    document.getElementById(idx + 1 + "").style.backgroundColor = "olive";
+                    console.log(idx + 1);
+                    // resetdropdown();
+
+                    return searchNumber;
+                }
+            }
+        }
+        function divfill(){
+                document.getElementById('fill').innerHTML = "";
+
+            }
+        function clearAll() {
+            let searchNumber = document.getElementById('Vechile').value;
+            for (let idx = 0; idx < vechileNumber.length; idx++) {
+                if (searchNumber == vechileNumber[idx]) {
+                    document.getElementById(idx + 1 + "").innerHTML = searchNumber;
+                    document.getElementById(idx + 1 + "").style.backgroundColor = "grey";
+                    resetdropdown();
+
+                    break;
+                }
+
+
+            }
+            
+            // console.log("hello");
+            // for (let idx = 0; idx < vechileNumber.length; idx++) {
+            //     console.log(document.getElementById(idx + 1 + "").value);
+            //     if (document.getElementById(idx + 1 + "").innerHTML == (idx + 1 + "" + vechileNumber[idx])) {
+            //         document.getElementById(idx + 1 + "").innerHTML = vechileNumber[idx];
+            //         document.getElementById(idx + 1 + "").style.backgroundColor = "gery";
+            //         console.log(document.getElementById(idx + 1 + "").innerHTML = vechileNumber[idx]);
+            //         break;
+            //     }
+            // }
+
+        }
+
+        // console.log(search());
+
+
+
+
+    </script>
+
+</body>
+
+</html>
