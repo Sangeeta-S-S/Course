@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="res">
+    </div>
+    <script>
+        function split(str,Space){
+           let  result="";
+            for(let idx=0;idx<str.length;idx++){ 
+                if(str[idx]==Space){
+                    result+=",";
+                }
+                else{
+                    result+=str[idx];
+                }
+
+            }
+            document.getElementById('res').innerHTML=result;
+        }
+        split("All are Welcome"," ")
+    </script>
+</body>
+</html>

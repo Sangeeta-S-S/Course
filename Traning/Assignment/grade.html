@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Grade</h2>
+    Mark : <input type="text" name="mark" id="mark" onkeyup="grade()"/>
+    Grade : <input type="text" name="grade" id="grade"/>
+
+    <script>
+        function grade(){
+            let mark=Number(document.getElementById('mark').value);
+            let grade=""
+            if(mark>90 || mark==100){
+                grade="A";
+            }
+            else if(mark>80 || mark==90){
+                grade="B";
+            }
+            else if(mark>70 || mark==80){
+                grade="C";
+            }
+            else if(mark>60 || mark==70){
+                grade="D";
+            }
+            else if(mark>50 || mark==60){
+                grade="E";
+            }
+            else {
+                grade="F";
+            }
+            document.getElementById('grade').value=grade;
+
+
+        }
+    </script>
+</body>
+</html>

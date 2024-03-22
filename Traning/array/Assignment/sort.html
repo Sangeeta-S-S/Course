@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para"></p>
+    <script>
+        function arraysort(arr){
+            // let result="";
+            let temp=0;
+            for(let idx=0;idx<arr.length;idx++){
+                for(let idx1=idx+1;idx1<arr.length;idx1++){
+                    if(arr[idx]>arr[idx1]){
+                    temp=arr[idx];
+                    arr[idx]=arr[idx1];
+                    arr[idx1]=temp;
+                    }
+                }    
+            }
+            console.log(arr);
+            document.getElementById('para').innerHTML=arr;
+        }
+        arraysort([12,50,45,65,55,23,10,5]);
+    </script>
+
+</body>
+</html>

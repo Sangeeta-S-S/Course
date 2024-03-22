@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2> 5 tables</h2>
+        <p id="para" > 5tables</p>
+    </div>
+    
+    <button type="button" id="table" onclick="tables()">5tables</button>
+    <script>
+        function tables(){
+            let num=5;
+            let result=0;
+            let num2,table=0;
+            for(num2=1; num2<=10; num2++){
+                result=num*num2 ;
+                table= table +num +"*" + num2+ "=" +result +"<br>" ;
+            }
+            document.getElementById('para').innerHTML=table;
+        }
+    </script>
+</body>
+</html>

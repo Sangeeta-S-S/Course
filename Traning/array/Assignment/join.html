@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para"></p>
+    <script>
+        function arrayJoin(array,specialChar){
+            let result="";
+            for(let idx=0;idx<array.length;idx++){
+                result+=array[idx];
+                if(idx <array.length-1){
+                    result+=specialChar;
+                }
+            }
+            console.log(result);
+            document.getElementById('para').innerHTML="ToString Array: "+result;
+
+        }
+        arrayJoin(["bike","cycle","auto","car"]," | ");
+    </script>
+</body>
+</html>

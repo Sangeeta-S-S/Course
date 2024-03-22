@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para"></p>
+    <script>
+        function arrayinclude(array,searchelement){
+            let result=true;
+            for(let idx=0;idx<array.length;idx++){
+                if(array[idx]==searchelement){
+                    document.getElementById('para').innerHTML="Include Array:"+result;
+                    return result;
+                }
+            }
+            document.getElementById('para').innerHTML="Include Array:"+  "false";
+
+            return false;
+            
+
+        }
+        console.log(arrayinclude(["bike","car","cycle","truck","bus","cycle"],"cycle"));
+    </script>
+</body>
+</html>

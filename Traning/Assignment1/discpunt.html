@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> DISCOUNT </h2>
+    bill <input type="number" name="bill" id="bill" />
+    Discount <input type="number" name="dis" id="dis"/>
+    Final Bill<input type="number" name="final" id="final"/><br>
+    <button type="button" name="result" id="result" onclick="bill()">Result</button>
+    <script>
+        
+        function bill(){
+            let amount=document.getElementById('bill').value;
+            let result=0;
+            let finddis=0;
+            if(amount<1000 ){
+                result=amount-finddis;
+            }
+            else if(amount>=1000 || amount>2000){
+                finddis=(amount*(5/100));
+                result=amount-finddis;
+            }else if(amount>=2000){
+                finddis=(amount*(10/100));
+                result=amount-finddis;
+            }
+            document.getElementById('dis').value=finddis;
+            document.getElementById('final').value=result;
+        }
+    
+    </script>
+</body>
+</html>

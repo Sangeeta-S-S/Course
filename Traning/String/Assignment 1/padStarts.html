@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="res"></div>
+    <script>
+        function padStarts(str,size,fillelemet){
+
+            let result="";
+            let strlen=str.length;
+            let fill=size-strlen;
+            if(size<strlen){
+                strlen=size;
+            }
+            // for(let idx=0;idx<strlen;idx++){
+            //     result=result+str[idx];
+            // }
+            for(let idx1=0;idx1<fill;idx1++){
+                result=fillelemet+result;
+            }
+            console.log(result);
+            document.getElementById('res').innerHTML="padStart: "+result+str;
+        }
+        padStarts("hello",1,"@")
+    </script>
+    <div id="result"></div>
+    <script>
+        function padEnd(str,size,fillelemet){
+
+            let result="";
+            let strlen=str.length;
+            let fill=size-str.length;
+            if(size<strlen){
+                strlen=size;
+            }
+            for(let idx=0;idx<strlen;idx++){
+                result=result+str[idx];
+            }
+            for(let idx1=0;idx1<fill;idx1++){
+                result=result+fillelemet;
+            }
+            
+            console.log(result);
+            document.getElementById('result').innerHTML= "padEnd: "+result;
+        }
+        padEnd("hello",10,"@")
+    </script>
+
+</body>
+</html>

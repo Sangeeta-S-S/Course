@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Attendance</h2>
+    <h6>ALLOW THE STUDENT IF ATTENDANCE IS GREATER THAN 75% I/P: Total number of class and total no. of classes attednded
+    </h6>
+   
+    Total no.of Class<input type="number" name="cls" id="cls"/>
+    Total no.of attended<input type="number" name="attended" id="attended"/>
+    Percentage <input type="text" nam="percentage" id="percentage" />
+    <button type="button" id="res" onclick="Attendance()">Result</button><br>
+    <p id="allow"></p>
+    <script>
+        function Attendance(){
+            let cls= Number(document.getElementById('cls').value);
+            let attendance= Number(document.getElementById('attended').value);
+            let percent=(attendance/cls)*100;
+            if(percent>=75){
+                document.getElementById('allow').innerHTML="allow student to write exam";
+            }else
+                document.getElementById('allow').innerHTML="Don't allow the student"
+            document.getElementById('percentage').value=percent + "%";
+        }
+    </script>
+     
+
+
+</body>
+</html>

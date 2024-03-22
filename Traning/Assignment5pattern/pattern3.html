@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Number Of Row<input type="number" id="row"/>
+    <br>
+    <button onclick="triangle()"> Print</button>
+    <div id="res"></div>
+   
+    <script>
+        function triangle(){
+            let result="";
+            let num=document.getElementById('row').value;
+            for(let row=1;row<=(Math.ceil(num/2));row++){
+                let stopAt=Math.floor(num/2)+row;
+                for(let col=1;col<=stopAt;col++){
+                    if(col<=num-stopAt){
+                        result +="&nbsp;&nbsp;";
+                    }else{
+                        result +="*";
+                    }
+                }
+                result+="<br>";
+            } 
+            document.getElementById('res').innerHTML=result;
+            console.log(result);
+        }
+    </script>
+     <style>
+        #res{
+            margin-left: 200px;
+        }
+    
+        </style>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="res"></div>
+    <button type="button" onclick="letter()">print</button>
+    <script>
+        function letter(){
+            let result="";
+            for(let row=1;row<=2;row++){
+                for(let col=1;col<=5;col++){
+                    result+="* ";
+                }
+                result+="<br>"
+            }
+            for(let row=1;row<=2;row++){
+                for(let col=1;col<=2;col++){
+                    result+="* ";
+                }
+                result+="<br>"
+            }
+            for(let row=1;row<=2;row++){
+                for(let col=1;col<=5;col++){
+                    result+="* ";
+                }
+                result+="<br>"
+            }
+            for(let row=1;row<=2;row++){
+                for(let col=1;col<=5;col++){
+                    if(col<=3){
+                        result+="&nbsp;&nbsp;&nbsp;";
+                    }else{
+                        result+="* ";
+                    }
+                    
+                }
+                result+="<br>"
+            }
+             for(let row=1;row<=2;row++){
+                for(let col=1;col<=5;col++){
+                    result+="* ";
+                }
+                result+="<br>"
+            }
+        document.getElementById('res').innerHTML=result;
+        console.log(result);
+
+        }
+    </script>
+</body>
+</html>

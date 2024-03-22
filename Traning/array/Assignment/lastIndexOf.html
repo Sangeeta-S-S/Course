@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para"></p>
+    <!-- <button onclick="arrayPush([10],20)">result</button> -->
+    <script>
+        function arrayLastIndexOf(array,searchelement){
+            let result="";
+            let eleIdx=-1;
+            // for(let idx=0;idx<array.length;idx++){
+            //     if(searchelement==array[idx]){
+            //         eleIdx=idx;
+            //     }
+
+            // }
+            for(let idx=array.length;idx>0;idx--){
+                if(searchelement==array[idx]){
+                    eleIdx=idx;
+                    break;
+                }
+
+            }
+            console.log(eleIdx);
+            result+=searchelement+" Last Index Number is: "+eleIdx+"<br>";
+            document.getElementById('para').innerHTML=result;
+
+        }
+        arrayLastIndexOf(["bike","car","bicycle","truck","bus","bicycle"],"bicycle");
+        arrayLastIndexOf(["10","20","30","40","30","50","60"],"30");
+    </script>
+
+</body>
+</html>

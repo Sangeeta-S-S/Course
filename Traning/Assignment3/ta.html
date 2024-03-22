@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>Print the Range of numbers<br>
+        Number Range :
+        <input type="text" id="numRan1" name="numRan1" />
+        <input type="text" id="numRan2" name="numRan2" />
+        <button type="button" onclick="numRange()">Show Range</button>
+        <p id="numRanMsg" style="margin-left:200px;"></p>
+    </div>
+
+    <script>
+        function numRange() {
+            let numRan1 = Number(document.getElementById('numRan1').value);
+            let numRan2 = Number(document.getElementById('numRan2').value);
+            let result = "";
+            for (let num = numRan1; num <= numRan2; num++) {
+                result = result + num + "<br>";
+            }
+            document.getElementById('numRanMsg').innerHTML = result;
+
+            //for(;numRan1 <=numRan2; numRan1++)//
+        }
+    </script>
+</body >
+</html >

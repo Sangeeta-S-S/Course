@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    A : <input type="text" name ="num1" id="num1"/>
+    B : <input type="text" name ="num2" id="num2"/>
+    Result : <input type="text" name ="result" id="result"/>
+    <br>
+    <br>
+    <button type="button" name="add" id="add" onclick="cal('add')">ADD</button>
+    <button type="button" name="sub" id="sub" onclick="cal('sub')">SUB</button>
+    <button type="button" name="mul" id="mul" onclick="cal('mul')">MUL</button>
+    <button type="button" name="div" id="div" onclick="cal('div')">DIV</button>
+    <script>
+    
+        function cal(operation){
+            
+            let number1=Number(document.getElementById('num1').value);
+            let number2=Number(document.getElementById('num2').value);
+            let calResult="";
+            if(operation=='add'){
+                calResult=number1+number2;
+            }
+            else if(operation=='sub'){
+                calResult=number1-number2;
+             }
+             else if(operation=='mul'){
+                calResult=number1*number2;
+             }
+             else{
+                calResult=number1/number2;
+             }
+             document.getElementById("result").value = calResult;
+
+
+        }
+    </script>
+    
+</body>
+</html>

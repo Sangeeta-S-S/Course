@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>find number is positive or negative</h3>
+    number <input type="text" name="num" id="num" onkeyup="number()"/>
+    result <input type="text" name="result" id="result"/>
+    <script>
+        function number(){
+            num=Number(document.getElementById('num').value);
+            result=""
+            if(num>=0){
+                result="Positive";
+            }else if(num<0){
+                result="Negative";
+            }
+            document.getElementById('result').value=result;
+        }
+
+    </script>
+</body>
+</html>

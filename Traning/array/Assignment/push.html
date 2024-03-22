@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para"></p>
+    <!-- <button onclick="arrayPush([10],20)">result</button> -->
+    <script>
+        function arrayPush(array,element){
+            let addelement=array.length;
+            let result = "";
+            console.log(addelement);
+            array[addelement]=element;
+            result+="Number: "+array;
+            console.log(array);
+            addelement=array.length
+            console.log(addelement);
+
+            document.getElementById('para').innerHTML=result;
+
+        }
+        arrayPush(["bus","lorry"],"car");
+        arrayPush(["bus","lorry","car"],"bile");
+        arrayPush([1,2],5);
+
+        
+
+    </script>
+</body>
+</html>

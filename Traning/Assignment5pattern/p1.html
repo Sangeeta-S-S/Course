@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Star Diamond</h3>
+    Enter Number : <input type="text" id="num1" name="num1">
+    <button onclick="star2()">Get Stars</button><br><br>
+    <div style="color: rgb(18, 5, 255); font-size: 20px;margin-left: 100px;height: 120px;" id="output2"></div>
+    <script>
+        function star2() {
+            let num2 = Number(document.getElementById("num1").value);
+            let result1 = "";
+            for (let i = 1; i <= num2; i++) {
+                for (let j = 1; j <= num2 - i; j++) {
+                    result1 += "&nbsp;&nbsp";
+                }
+                for (let k = 0; k < 2 * i - 1; k++) {
+                    result1 += "*";
+                }
+                result1 += "<br/>";
+            }
+            for (let i = num2 - 1; i >= 1; i--) {
+                for (let j = 1; j <= num2 - i; j++) {
+                    result1 += "&nbsp;&nbsp";
+                }
+                for (let k = 0; k < 2 * i - 1; k++) {
+                    result1 += "*";
+                }
+                result1 += "<br/>";
+            }
+
+            document.getElementById("output2").innerHTML = result1;
+        }
+    </script>
+</body>
+
+</html>

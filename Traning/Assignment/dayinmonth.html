@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Day in Month</h2>
+    Month<select id="month" onchange="findDay()">
+        <option>SELECT</option>
+        <option id="JAN">JAN</option>
+        <option id="FEB">FEB</option>
+        <option id="MAR">MAR</option>
+        <option id="APR">APR</option>
+        <option id="MAY">MAY</option>
+        <option id="JUNE">JUNE</option>
+        <option id="JULY">JULY</option>
+        <option id="AUG">AUG</option>
+        <option id="SEP">SEP</option>
+        <option id="OCT">OCT</option>
+        <option id="NOV">NOV</option>
+        <option id="DEC">DEC</option>
+
+    </select><br>
+    Days <input type="number" name="days" id="days">
+    <script>
+        function findDay(){
+            let month=document.getElementById('month').value;
+            let days=0;
+            if(month=="JAN"|| month=="MAR" || month=="MAY" || month=="JULY" || month=="AUG" || month=="OCT" || month=="DEC"){
+                days=31;
+            }
+            else if(month=="APR"|| month=="JUNE" || month=="SEP" || month=="NOV"){
+                days=30;
+            }else if(month=="FEB"){
+                days=28;
+            }
+            document.getElementById('days').value=days;
+        }
+    </script>
+</body>
+</html>

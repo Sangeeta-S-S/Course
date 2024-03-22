@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="res"></div>
+    <script>
+        function subString(str,startnum,endnum){
+            let result="";
+            for(let idx=startnum;idx<endnum;idx++){
+                result+=str[idx];
+            }
+            document.getElementById('res').innerHTML="SubString: "+result;
+        }
+        subString("Welcome All",3,10);
+
+    </script>
+    <div id="result"></div>
+    <script>
+        function sliceString(str,startnum,endnum){
+            let result="";
+            for(let idx=startnum;idx<endnum;idx++){
+                result+=str[idx];
+            }
+            document.getElementById('result').innerHTML="Slice String "+result;
+        }
+        sliceString("You are Welcome",5,13);
+        
+    </script>
+</body>
+</html>

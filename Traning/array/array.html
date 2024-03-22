@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Array</h2>
+        <script>
+            let parkingBays = [];
+
+            function parkVechile(vechileNo){
+                let parkedLength = parkingBays.length;
+                console.log("total"+parkedLength);
+
+                parkingBays[parkedLength] = vechileNo;
+                console.log(parkingBays);
+            }
+
+            function getParkedVechileByNum(parkedBay){
+                console.log(parkingBays[parkedBay]);
+            }
+
+            function getParkedVechileByVechileNum(vechileNum){
+                let isFound= false;
+                for(let idx=0; idx<=parkingBays.length; idx++){
+                    if(parkingBays[idx] == vechileNum){
+                        console.log("Available");
+                        isFound =true;
+                        break;
+                    }
+                }
+                if(!isFound){
+                    console.log("Not Available");
+                }
+            }
+            parkVechile("TN10Y5286");
+            parkVechile("TN108596");
+            parkVechile("TN10Y1478");                
+            parkVechile("TN10G2586");
+
+            getParkedVechileByNum(1);
+            getParkedVechileByNum(2);
+            getParkedVechileByVechileNum("TN10G2586"); 
+        </script>
+
+        <div>
+            <h2>Array functions</h2>
+            <p id="arrFunResult"></p>
+            <script>
+                function arrMethods(){
+                    let result = "";
+                    let nameList = ["Dinesh", "Anand", "Prakash", "Yukesh", "Saraswathi", "Divin", "Sangeetha"];
+
+                    result += "Array : " + nameList + "<br>";
+                    result += "Length : " + nameList.length + "<br>";
+                    result += "Push Priya : " + nameList.push("Priya") + "<br>";
+                    result += "Array : " + nameList + "<br>";
+                    result += "Push Sangeetha : " + nameList.push("Sangeetha") + "<br>";
+                    result += "Array : " + nameList + "<br>";
+                    result += "Pop : " + nameList.pop() + "<br>";
+                    result += "Array : " + nameList + "<br>";
+                    result += "Unshift Sangeetha : " + nameList.unshift("Sangeetha") + "<br>";
+                    result += "Array : " + nameList + "<br>";
+                    result += "Unshift Sowndharya : " + nameList.unshift("Sowndharya") + "<br>";
+                    result += "Array : " + nameList + "<br>";
+                    result += "Shift : " + nameList.shift() + "<br>";
+                    result += "Array : " + nameList + "<br>";
+                    result += "Includes Yukesh : " + nameList.includes("Yukesh") + "<br>";
+                    result += "Includes Viswa : " + nameList.includes("Viswa") + "<br>";
+                    result += "Index Of Sangeetha: " + nameList.indexOf("Sangeetha") + "<br>";
+                    result += "LastIndex of Sangeetha : " + nameList.lastIndexOf('Sangeetha') + "<br>";
+                    result += "Index Of Anand: " + nameList.indexOf("Anand") + "<br>";
+                    result += "LastIndex of Anand : " + nameList.lastIndexOf('Anand') + "<br>";
+                    result += "Array : " + nameList + "<br>";
+                    result += "Reverse : " + nameList.reverse() + "<br>";
+                    result += "Sort : " + nameList.sort() + "<br>";
+                    result += "Concat [JaiKrishna, Karthick]: " + nameList.concat(["JaiKrishna", "Karthick"]) + "<br>";
+
+                    result += "Join By / : " + nameList.join("/") + "<br>";
+                    result += "Array : " + nameList + "<br>";
+                    result += "Slice 3,7 : " + nameList.slice(3,7) + "<br>";
+                    result += "Slice 6 : " + nameList.slice(6) + "<br>";
+                    result += "ToString : " + nameList.toString() + "<br>";
+                    result += "Array : " + nameList + "<br>";
+                    result += "Fill **** 4 6 : " + nameList.fill("****", 4,6) + "<br>";
+                    result += "Array : " + nameList + "<br>";
+                    document.getElementById('arrFunResult').innerHTML = result;
+                }
+                arrMethods();
+            </script>
+        </div>
+    </div>
+</body>
+</html>

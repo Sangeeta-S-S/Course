@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Number1<input type="number" id="num1"/>
+    Number2<input type="number" id="num2"/>
+    <div id="res"></div>
+    <button onclick="range()">sumbit</button>
+    <script>
+        function range(){
+            let num1=Number(document.getElementById('num1').value);
+            let num2=Number(document.getElementById('num2').value);
+            let result="";
+            let res="";
+            for(let i=num1;i<=num2;i++){
+                result= result+i+" "+num2+" ";
+                num2=num2-1;
+                // for(let j=num2;j>=num2/2;j--){
+                //      console(j);
+                    // break;
+                // } num2--
+            }
+            document.getElementById('res').innerHTML=result;
+        
+            
+        }
+    </script>
+</body>
+</html>

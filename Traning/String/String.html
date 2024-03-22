@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>String</h2>
+        <p id="strOp"></p>
+        <script>
+            let str = " Hello Class, Project yepo mudipinga Pro? ";
+            let strResult = "";
+
+            strResult += "String : " + str + "<br>";
+            strResult += "Length : " + str.length + "<br>";
+            strResult += "Replace yepo when : " + str.replace("e", "#") + "<br>";
+            strResult += "CharAt 5 : " + str.charAt(5) + "<br>";
+            strResult += "Index Of o : " + str.indexOf("o") + "<br>";
+            strResult += "Last Index Of o : " + str.lastIndexOf("o") + "<br>";
+            strResult += "Last Index of Pro : " + str.lastIndexOf("Pro") + "<br>";
+            strResult += "Index of Pro : " + str.indexOf("Pro") + "<br>";
+            strResult += "StartsWith He : " + str.startsWith(" He") + "<br>";
+            strResult += "StartsWith Hai : " + str.startsWith("Hai") + "<br>";
+            strResult += "Ends With ? : " + str.endsWith("? ") + "<br>";
+            strResult += "EndsWith Pro? : " + str.endsWith("Pro?") + "<br>";
+            strResult += "UpperCase  : " + str.toUpperCase() + "<br>";
+            strResult += "LowerCase : " + str.toLowerCase() + "<br>";
+            strResult += "Includes Project : " + str.includes("Project") + "<br>";
+            strResult += "Includes Task : " + str.includes("Task") + "<br>";
+            strResult += "Repeat 3 : " + str.repeat(3) + "<br>";
+            strResult += "SubString 3,16: " + str.substring(4,16) + "<br>";
+            strResult += "Pad Start 45 : " + str.padStart(45,"@#$%^") + "<br>";
+            strResult += "Pad End 45 * : " + str.padEnd(45, "*$%^&") + "<br>";
+            strResult += "Concat : " + str.concat("Sikiram mudinga plz ") + "<br>";
+            strResult += "Split o : " + str.split("o") + "<br>";
+            strResult += "Split  : " + str.split(" ") + "<br>";
+            console.log(str);
+            console.log(str.split(" "));
+            strResult += "Trim : " + str.trim() + "<br>";
+            console.log(str);
+            console.log(str.trim());
+            strResult += "Slice 4 9  : " + str.slice(4,9) + "<br>";
+            strResult += "String : " + str + "<br>";
+            document.getElementById('strOp').innerHTML = strResult;
+        </script>
+    </div>
+</body>
+</html>

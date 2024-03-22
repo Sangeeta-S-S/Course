@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para"></p>
+    <!-- <button onclick="arrayPush([10],20)">result</button> -->
+    <script>
+        function arrayPop(array,element){
+            let totallen=array.length;
+            let result = "";
+            let newarray=[];
+            for(let index=0;index<(array.length-1);index++){
+                newarray[index]=array[index];
+            }
+            console.log(newarray.length);
+            console.log(newarray);
+            result+="Number: "+newarray;
+        
+
+            document.getElementById('para').innerHTML=result;
+        }
+        arrayPop(["bus","lorry","car"]);
+
+    </script>
+
+    
+</body>
+</html>

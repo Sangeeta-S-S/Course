@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para"></p>
+    <!-- <button onclick="arrayPush([10],20)">result</button> -->
+    <script>
+        function arrayIndexOf(array,searchelement){
+            let result="";
+            let eleIdx=-1;
+            for(let idx=0;idx<array.length;idx++){
+                if(searchelement==array[idx]){
+                    eleIdx=idx;
+                    break;
+                }
+            }
+            console.log(eleIdx);
+            result+=searchelement+" Index Number is: "+eleIdx;
+            document.getElementById('para').innerHTML=result;
+
+        }
+        arrayIndexOf([10,20,30,50,70],50);
+        // arrayIndexOf(["bike","car","cycle","truck","bus"],"cycle");
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Find Square</h2>
+    length <input type="number" name="len" id="len"/>
+    breadth <input type="number" name="bre" id="bre"/>
+    result <input type="text" name="result" id="result"/><br>
+    <button type="button" name="find" id="find" onclick="square()">Find</button>
+    <script>
+        function square(){
+            let length= document.getElementById('len').value;
+            let breadth= document.getElementById('bre').value;
+            let res="";
+            if(length==breadth){
+                res="Square";
+            }else {
+                res="Not a Square";
+            }
+            document.getElementById('result').value=res;
+        }
+
+    </script>
+</body>
+</html>

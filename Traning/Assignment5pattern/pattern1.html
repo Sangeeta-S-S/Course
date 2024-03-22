@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Number Of Row<input type="number" id="row"/>
+    <button type="button"  onclick="star()">print the pattern</button>
+    <div id="res"></div>
+
+    <script>
+        function star(){
+            let num=document.getElementById('row').value;
+            let result="";
+            for(let row=1;row<=num;row++){
+                // result="";
+                for(let col=1;col<=row;col++){
+                    result+="*";
+                }
+                result+="<br>"; 
+                document.getElementById('res').innerHTML=result;
+                console.log(result);
+            }
+
+        }
+        /*function star(){
+            let row=document.getElementById('row').value;
+            let result="";
+            for(let i=0;i<row;i++){
+               for(let j=0;j<=i;j++){
+                 result= result+" "+ "*";
+                 console.log(result);
+                 break;
+               }
+               document.getElementById('res').innerHTML=result;
+
+            }*/
+    </script>
+</body>
+</html>

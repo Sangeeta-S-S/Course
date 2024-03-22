@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Number Of col<input type="number" id="col"/>
+    <br>
+    <button onclick="square()"> Print</button>
+    <div id="res"></div>
+    <script>
+        function square(){
+            let num=document.getElementById('col').value;
+            let result="";
+
+            for (let row=1;row<=num;row++){
+
+                for(let col=1;col<=num;col++){
+                    if(row==1||row==num||col==1||col==num){
+                        result+="* ";
+                    }
+                    else{
+                        result+="&nbsp;&nbsp; ";
+                    }
+                    
+                }
+                result+="<br>"; 
+                document.getElementById('res').innerHTML=result;
+                console.log(result);
+            }
+        }
+    </script>
+</body>
+</html>

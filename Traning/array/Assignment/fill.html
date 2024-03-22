@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para"></p>
+    <!-- <button onclick="arrayPush([10],20)">result</button> -->
+    <script>
+        function arrfill(arr,start,finish){
+            
+        }
+        arrfill([10,20,30,40,50],2,5);
+    </script>
+    <script>
+        function arrayfill(array,replacelement,fillelement){
+            let result="";
+            for(let idx=0;idx<array.length;idx++){
+                if(replacelement==array[idx]){
+                    array[idx]=fillelement;
+                }
+            }
+            console.log(array);
+            result+="Fill Array: "+array;
+            document.getElementById('para').innerHTML=result;
+
+        }
+        arrayfill(["bike","car","cycle","truck","bus","cycle"],"cycle","vechile");
+    </script>
+    
+</body>
+</html>

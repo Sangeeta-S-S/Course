@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>task</h2>
+    <p id="para"></p>
+    <button type="button" name="fan" id="f" onclick="on('f')">fan</button>
+    <button type="button" name="light" id="l" onclick="on('l')">light</button>
+    <button type="button" name="Tv" id="t"onclick="on('t')">tv</button>
+    <button type="button" name="door" id="d" onclick="on('d')">door</button>
+    <script>
+        function on(operation){
+            let result=""
+            if(operation=='f'){
+                result="fan  on";
+            }else if(operation=='l'){
+                result="light on";
+            }else if(operation=='t'){
+                result="tv on";
+            }else if(operation=='d'){
+                result="open the door";
+            }
+            document.getElementById('para').innerHTML=result;
+        }
+    </script>
+     
+
+    
+
+
+
+</body>
+</html>

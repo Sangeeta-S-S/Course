@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Pattern</title>
+</head>
+<body>
+    <label for="row">Enter number of rows:</label>
+    <input type="number" id="row" />
+    <button onclick="triangle()">Generate Pattern</button>
+    <br />
+    <div id="res"></div>
+
+    <script>
+        function triangle(){
+            let result="";
+            let num=parseInt(document.getElementById('row').value);
+            // Upper half of the diamond
+            for(let row=1;row<=(Math.ceil(num/2));row++){
+                let stopAt=Math.floor(num/2)+row;
+                for(let col=1;col<=num;col++){
+                    if(col<=num-stopAt){
+                        result +="&nbsp;&nbsp;";
+                    }else if(col <= stopAt) { 
+                        result +="*";
+                    }
+                }
+                result+="<br>";
+            }
+            // Lower half of the diamond
+            for(let row=Math.ceil(num/2)-1;row>=1;row--){
+                let stopAt=Math.floor(num/2)+row;
+                for(let col=1;col<=num;col++){
+                    if(col<=num-stopAt){
+                        result +="&nbsp;&nbsp;";
+                    }else if(col <= stopAt) { 
+                        result +="*";
+                    }
+                }
+                result+="<br>";
+            }
+            document.getElementById('res').innerHTML=result;
+        }
+    </script>
+</body>
+</html>

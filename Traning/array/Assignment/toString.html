@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para"></p>
+    <script>
+        function arrayTostring(array){
+            let result="";
+            // let newString="";
+            for(let idx=0;idx<array.length;idx++){
+                result+=array[idx];
+                if(idx <array.length-1){
+                    result+=","
+                }
+            }
+            console.log(result);
+            document.getElementById('para').innerHTML="ToString Array: "+result;
+        }
+        // arrayTostring(["bike","cycle","auto","car"]);
+        arrayTostring([10,20,30,40,50]);
+
+    </script>
+    <!-- <script>
+        function tostring(array){
+
+        }
+        document.getElementById('para').innerHTML="ToString Array: "+result;
+        tostring([10,20,30,40,50])
+    </script> -->
+</body>
+</html>

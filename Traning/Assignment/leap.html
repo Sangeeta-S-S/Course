@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>LEAP YEAR</h2>
+    year <input type="number" name="year" id="year"/><br>
+    result<input type="text" name="leapyr" id="leapyr"/><br>
+    <button type="button" name="find" id="find" onclick="leapyr()">FIND</button>
+    <script>
+        function leapyr(){
+            let year=document.getElementById('year').value;
+            let result="";
+            if(year%4==0 || year%400==0){
+                result="leap year";    
+            }else{
+                result="Not a leap year";
+            }
+            document.getElementById('leapyr').value=result;
+        }
+    </script>
+
+</body>
+</html>

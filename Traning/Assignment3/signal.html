@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="main">
+    <h3>Signal</h3>
+    <div class="signal">
+        <div class="Road  r1" id="top1">top1</div>
+        <div class="Road r2" id="top2">top2</div>
+        <div class="road  r3" id="right1">right1</div>
+        <div class="road  r4" id="right2">right2</div>
+        <div class="road  r5" id="left1">left1</div>
+        <div class="road  r6" id="left2">left2</div>
+        <div class="Road  r7" id="down1">down1</div>
+        <div class="Road  r8" id="down2">down2</div>
+
+        <div class="box"></div>
+        <div class="circle"></div>
+
+        <div class="smallbox" id="box1"></div>
+        <div class="smallbox" id="box2"></div>
+        <div class="smallbox" id="box3"></div>
+        <div class="smallbox" id="box4"></div>
+
+        <button type="button" id="b1">press1</button>
+        <button type="button" id="b2">press2</button><br>
+        <button type="button" id="b3">press3</button>
+        <button type="button" id="b4" onclick="changeColor()"> press4</button>
+    </div>
+
+    <style>
+        
+
+        .smallbox {
+            width: 25px;
+            height: 25px;
+            border-style: solid;
+        }
+
+        /* .circle{
+        position: absolute;
+        top:290px;
+        left: 240px;
+        width: 50px;
+        height: 50px;
+        border-radius: 30px;
+        border-style: solid;
+        background-color: white;
+
+    } */
+        .box {
+            position: absolute;
+            top: 260px;
+            margin-left: 210px;
+            width: 100px;
+            height: 110px;
+            border-style: solid;
+            background-color: grey;
+            /* border-radius: 80px; */
+        }
+
+        .road {
+            width: 209px;
+            height: 50px;
+            border-style: solid;
+            background-color: grey;
+
+        }
+
+        .Road {
+            width: 50px;
+            height: 200px;
+            border-style: solid;
+        }
+
+        .r1 {
+            position: absolute;
+            left: 270px;
+            border-left-style: dashed;
+            border-left-color: white;
+            background-color: black;
+
+        }
+
+        .r2 {
+            position: relative;
+            left: 210px;
+            border-right-style: dashed;
+            border-right-color: white;
+            background-color: black;
+
+        }
+
+        .r3 {
+            position: absolute;
+            left: 322px;
+            border-bottom-style: dashed;
+            border-bottom-color: white;
+            background-color: black;
+        }
+
+        .r4 {
+            border-top-color: white;
+            background-color: black;
+            border-top-style: dashed;
+            position: absolute;
+            left: 322px;
+            top: 315px;
+        }
+
+        .r7 {
+            position: absolute;
+            left: 270px;
+            top: 369px;
+            border-left-style: dashed;
+            border-left-color: white;
+            background-color: black;
+
+        }
+
+        .r8 {
+            position: relative;
+            top: -5px;
+            left: 210px;
+            border-right-style: dashed;
+            border-right-color: white;
+            background-color: black;
+
+        }
+
+        .r5 {
+            border-bottom-style: dashed;
+            border-bottom-color: white;
+            background-color: black;
+        }
+
+        .r6 {
+            position: relative;
+            bottom: 2px;
+            border-top-style: dashed;
+            border-top-color: white;
+            background-color: black;
+        }
+
+        #b1 {
+            position: absolute;
+            top: 10px;
+            left: 230px;
+        }
+    </style>
+    <script>
+        function changeColor() {
+            document.getElementById('down1').style.backgroundColor = "green";
+            document.getElementById('down2').style.backgroundColor = "green";
+            document.getElementById('top2').style.backgroundColor = "green";
+            document.getElementById('right1').style.backgroundColor = "green";
+            document.getElementById('left2').style.backgroundColor = "green";
+        }
+    </script>
+
+</body>
+
+</html>

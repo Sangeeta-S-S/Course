@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="result">
+    </div>
+    <script>
+        function startwith(str, startelment) {
+            let newstr = "";
+            let result = "";
+            let startlen = startelment.length;
+            for (idx = 0; idx < startlen; idx++) {
+                newstr = newstr + str[idx];
+            }
+            if (newstr == startelment) {
+                result = "true";
+            }
+            else {
+                result = "false";
+            }
+            console.log(result);
+            document.getElementById('result').innerHTML = result;
+
+            /*if(str[0]==startelment){
+                result="true"
+
+            }else{
+                result="false";
+            }*/
+            /*let strlen = str.length;
+            let startlen = startelment.length;
+                for (idx = 0; idx < startlen; idx++) {
+                    if (startelment[idx] == str[idx]) {
+                        console.log("true");
+                        document.getElementById('result').innerHTML="true";
+                    }else{
+                        console.log("false");
+                        document.getElementById('result').innerHTML="false";
+                        break;
+                    }
+
+                }*/
+
+        }
+        startwith("Hello", "He");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para"></p>
+    <script>
+        function arrReverse(arr){
+            let result="";
+            let newarr=[];
+            let idx1=0;
+            for(let idx=(arr.length-1);idx>=0;idx--){
+                newarr[idx1]=arr[idx];
+                idx1++;
+            }
+            console.log(newarr);
+            document.getElementById('para').innerHTML=newarr;
+            
+        }
+        arrReverse(["bike","cycle","auto","car"]);
+        arrReverse([10,20,30,40,50]);
+    </script>
+
+</body>
+</html>

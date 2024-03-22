@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>greates number</h1>
+    number1 <input type="text" name="num1" id="num1"/>
+    number2 <input type="text" name="num2" id="num2"/>
+    number3 <input type="text" name="num3" id="num3"/><br><br>
+    Result <input type="text" name="result" id="result"/>
+    <button type="button" name="find" id="find" onclick="greatest()"> Find</button>
+<script>
+    function greatest(){
+    let n1=Number(document.getElementById('num1').value);
+    let n2=Number(document.getElementById('num2').value);
+    let n3=Number(document.getElementById('num3').value);
+    let res=0;
+    if(n1>n2 && n1>n3){
+        res=n1;
+    }
+    else if(n2>n1 && n2>n3){
+        res=n2;
+    }else if(n3>n1 && n3>n2){
+        res=n3;
+    }
+    document.getElementById('result').value=res;
+    }
+
+</script>
+
+</body>
+</html>
