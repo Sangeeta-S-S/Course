@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="./controller.js"></script>
+
+</head>
+<style>
+    .btn{
+        float: right;   
+    }
+</style>
+<body onload="checkSession()">
+    <div class="cart-items">
+    <div class="container mt-4">
+        <h2> Cart Page</h2>
+        <div class="row mt-4">
+            <div class="col"><a href="./index.html" class="btn btn-primary"> Home </a></div>
+            <div class="col"><a href="./admin.html" class="btn btn-primary"> Admin </a></div>
+            <div class="col"><a href="./cart.html" class="btn btn-warning"> Cart </a></div>
+            <div class="col"><a href="./login.html" class="btn btn-primary"> Login </a></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">Product</div>
+            <div class="col">Description</div>
+            <div class="col">Price</div>
+            <div class="col">Count</div>
+            <div class="col">Total</div>
+            <!-- <div class="col">Action</div> -->
+        </div>
+        <div id="productlist">
+
+        </div>
+        <div class="btn">
+            <button type="button" class="btn btn-success" onclick="UpdateCartDetails()">Checkout</button></div>
+            
+        </div>
+    </div>
+    
+</div>
+</body>
+<script>
+    var items=[]
+    getCart();
+    function getCart(){
+        let cartList=displayCart();
+        cartList
+            // .then((response) => { return response.json(); })
+            .then((response)=> response.json())
+            .then((data)=>{
+                items=data;
+                let result=""
+                console.log(data);
+                for(let item of items){
+                    result +='<div class="row mt-4">'
+                    result +='<div class="col"><img src="'+item.prodImg+'"  style=" width: 100px;"/></div>'
+                    result +='<div class="col">'+item.description+'</div>'
+                    result +='<div class="col" id="price'+item.id+'">'+item.price+'</div>'
+                    result +='<div class="col"> <input type="number" id="count'+item.id+'" name="count" class="form-control" onkeyup="findTotal('+item.id+')" /> </div>'
+                    result +='<div class="col"> <input type="number" id="total'+item.id+'" name="total" class="form-control" />  </div>'
+                    result +='<div class="col">'
+                    // result +='<button type="button" class="btn btn-secondary" onclick="UpdateCartDetails('+item.id+')">Checkout </button>'
+                    // result += '<button type="button" class="btn btn-secondary"> -- </button>'+
+                    // '<button type="button" class="btn btn-secondary"> + </button>'
+                    result+= ' </div> '+
+                                '</div>'
+                }
+                document.getElementById('productlist').innerHTML = result;
+                
+            })
+        }
+        
+        function findTotal(itemID){
+            let itemcount = items.filter((item) => { return item.id == itemID })[0];
+            console.log(itemcount);
+            let iPrice=document.getElementById('price'+itemcount.id).innerHTML;
+            let iCount= Number(document.getElementById('count'+itemcount.id).value);
+            let itotal=iCount * iPrice;
+            document.getElementById('total'+itemcount.id).value=itotal;
+        }
+        function UpdateCartDetails(){
+            for(let it of items){
+                
+                console.log(it)
+                let count=document.getElementById('count'+it.id).value;
+                console.log(count);
+                let total=document.getElementById('total'+it.id).value;
+                console.log(total);
+
+                let updatecart={
+                    "count":count,
+                    "total":total
+                };
+                alert('updating .....');
+                
+                //UpdateCountAndTotal(updatecart,it.id);
+                var cartUrl="https://retoolapi.dev/ReTSa5/InventoryCart";
+                let apiUrl=cartUrl+"/"+it.id;
+                console.log(apiUrl)
+                fetch(apiUrl, {
+                    "method": "PATCH",
+                    "body": JSON.stringify(updatecart),
+                    "headers": { "Content-Type": "application/json; charset=UTF-8" }
+                })
+                .then((response)=> response.json())
+                .then((data)=> { 
+                    console.log(data);
+                    
+                });
+                
+                       
+            }
+            // window.location.href="./admin.html" ;  
+        }
+        
+</script>
+</html>

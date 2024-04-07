@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="./controller.js"></script>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Register Employee</h2>
+        <div class="row mt-4">
+            <div class="col">EmpId : </div>
+            <div class="col"><input type="text" id="empId" name="empId" class="form-control"/></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">EmpName : </div>
+            <div class="col"><input type="text" id="empName" name="empName" class="form-control"/></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">LoginType : </div>
+            <div class="col">
+                <select id="lgType" class="form-select">
+                    <option>Employee</option>
+                    <option>Admin</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">Password : </div>
+            <div class="col"><input type="Password" id="pswd" name="pswd" class="form-control"/></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">Confirm Password : </div>
+            <div class="col"><input type="Password" id="cfPswd" name="cfPswd" class="form-control"/></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col"></div>
+            <div class="col"><button type="button" class="btn btn-success" onclick="registration()">Register</button></div>
+        </div>
+    </div>
+    <script>
+        function registration(){
+            let empName = document.getElementById('empName').value;
+            let pswd = document.getElementById('pswd').value;
+            let lgType = document.getElementById('lgType').value;
+            let userName = document.getElementById('empId').value;
+
+           
+            let employee = {
+                            "type": lgType,
+                            "status": false,
+                            "empName": empName,
+                            "password": pswd,
+                            "userName": userName
+                        };
+            console.log(employee);
+            registerEmployee(employee);
+                    }
+    </script>
+</body>
+</html>
